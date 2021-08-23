@@ -1,3 +1,9 @@
+Queue ADT in Java based on linked list data structure.  This Queue ADT will simulate a set of 
+jobs to be performed by a set of processors, where there are always more jobs than processors.
+Given m jobs, with their respective start times and durations, the total wait time, maximum wait time,
+and average wait time over all jobs is to be determined.
+
+Files:
 1)README
 2)Simulation.java
 3)QueueInterface.java
