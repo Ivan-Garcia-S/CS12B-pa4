@@ -1,3 +1,4 @@
+// Queue ADT implementation
 public class Queue {
 	private Node head;
 	private Node tail;
@@ -7,13 +8,13 @@ public class Queue {
 		Object item;
 		Node next;
 		
-		Node(Object item){
+		Node(Object item) {
 			this.item = item;
 			this.next = null;
 		}
 	}
 	
-	Queue(){
+	Queue() {
 		head = null;
 		tail = head;
 		numItems = 0;
@@ -34,7 +35,7 @@ public class Queue {
 			tail = newN;
 			numItems++;
 		}
-		else if(numItems == 1){
+		else if(numItems == 1) {
 			head.next = newN;
 			tail = head.next;
 			numItems++;
@@ -46,7 +47,7 @@ public class Queue {
 		}
 	}
 	
-	public Object dequeue() throws QueueEmptyException{
+	public Object dequeue() throws QueueEmptyException {
 		Object temp;
 		if(numItems == 1) {
 			temp = head.item;
@@ -67,7 +68,7 @@ public class Queue {
 		return temp;
 	}
 	
-	public Object peek() throws QueueEmptyException{
+	public Object peek() throws QueueEmptyException {
 		if(head != null) {
 			Object temp = head.item;
 			return temp;
@@ -77,7 +78,7 @@ public class Queue {
 		}
 	}
 	
-	public void dequeueAll() throws QueueEmptyException{
+	public void dequeueAll() throws QueueEmptyException {
 		if(!isEmpty()) {
 			head = null;
 			tail = head;
@@ -91,11 +92,11 @@ public class Queue {
 	public String toString() {
 		Node temp = head;
 		String queue = "";
-		if(numItems !=0 ) {
-			
+		if(numItems != 0) {
 			while(temp != null) {
 				Job job = (Job)temp.item;
-				queue += "("+job.getArrival() +", " + job.getDuration() +", "+(job.getFinish()== -1?"*":String.valueOf(job.getFinish()))+") ";
+				queue += "("+job.getArrival() +", " + job.getDuration() +", "
+				      +(job.getFinish() == -1?"*":String.valueOf(job.getFinish()))+") ";
 				temp = temp.next;
 			}
 		}
